@@ -1,4 +1,4 @@
-# Contributing  
+# Contributing
 
 We love your input! We want to make contributing to this project as easy and transparent as possible, whether it's:
 
@@ -9,9 +9,10 @@ We love your input! We want to make contributing to this project as easy and tra
 - Becoming a maintainer
 
 When contributing to this repository, please first discuss the change you wish to make via issue,
-email, or any other method with the owners of this repository before making a change. 
+email, or any other method with the owners of this repository before making a change.
 
 ## We Develop with Github
+
 We use github to host code, to track issues and feature requests, as well as accept pull requests.
 
 ### Our Pledge

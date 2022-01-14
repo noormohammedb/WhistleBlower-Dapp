@@ -1,7 +1,7 @@
 {
   "name": "whistleblower",
   "version": "1.0.0",
-  "homepage": "https://pjflux2001.github.io/whistleblowerUI",
+  "homepage": "https://noormohammedb.github.io/WhistleBlower-Dapp/",
   "description": "whistleblower dapp on ethereum",
   "main": "truffle-config.js",
   "directories": {
@@ -20,8 +20,15 @@
     "ethereum",
     "dapp"
   ],
-  "author": "Noor Mohammed B",
-  "license": "ISC",
+  "contributors": [
+    "Noor Mohammed B",
+    "Bhanu",
+    "Prashant",
+    "Satyam",
+    "Darshana",
+    "Vishmay"
+  ],
+  "license": "MIT",
   "devDependencies": {
     "eslint": "7.11.0",
     "eslint-config-react-app": "^6.0.0",

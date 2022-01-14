@@ -21,12 +21,12 @@ import Button from "@material-ui/core/Button";
 
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ThumbDownIcon from "@material-ui/icons/ThumbDown";
-import CommentIcon from '@material-ui/icons/Comment';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import YouTubeIcon from '@material-ui/icons/YouTube';
+import CommentIcon from "@material-ui/icons/Comment";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import YouTubeIcon from "@material-ui/icons/YouTube";
 import { Comment } from "semantic-ui-react";
-import Chip from '@material-ui/core/Chip';
-import Modal from '@material-ui/core/Modal';
+import Chip from "@material-ui/core/Chip";
+import Modal from "@material-ui/core/Modal";
 
 import Navbar from "./Navbar";
 
@@ -68,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "40px",
     fontSize: "32px",
     paddingBottom: theme.spacing(3),
-    fontFamily: 'Montserrat, sans-serif',
+    fontFamily: "Montserrat, sans-serif",
   },
 
   card: {
@@ -97,8 +97,7 @@ const useStyles = makeStyles((theme) => ({
   },
   commentTitle: {
     color: "blue",
-    isolation: "isolate"
-    
+    isolation: "isolate",
   },
   author: {
     display: "flex",
@@ -135,53 +134,51 @@ const useStyles = makeStyles((theme) => ({
   },
   chip: {
     marginRight: "2.5px",
-    marginLeft: "2.5px"
+    marginLeft: "2.5px",
   },
   row: {
-    maxWidth: '1140px',
-    margin: '0 auto',
-    display: 'flex',
-    justifyContent: 'space-between',
+    maxWidth: "1140px",
+    margin: "0 auto",
+    display: "flex",
+    justifyContent: "space-between",
   },
-   rowLeft:{
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      color: '#fff',
+  rowLeft: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    color: "#fff",
   },
-  leftTitle:{
-    fontSize: '4rem',
-    fontFamily: 'Roboto, sans-serif'
+  leftTitle: {
+    fontSize: "4rem",
+    fontFamily: "Roboto, sans-serif",
   },
-  tagLine:{
-    fontSize: '2.5rem',
-    fontWeight: '400',
-    fontFamily: 'Montserrat, sans-serif',
+  tagLine: {
+    fontSize: "2.5rem",
+    fontWeight: "400",
+    fontFamily: "Montserrat, sans-serif",
   },
-  footerDiv:{
-    display:'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  }
-  
+  footerDiv: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
 }));
 
-
 const modal_style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
   width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
+  bgcolor: "background.paper",
+  border: "2px solid #000",
   boxShadow: 24,
   p: 4,
   borderRadius: "10px",
-  overflowY: 'initial',
-  height: '80vh',
-  overflowY: 'auto',
-}
+  overflowY: "initial",
+  height: "80vh",
+  overflowY: "auto",
+};
 
 function App() {
   const classes = useStyles();
@@ -199,7 +196,7 @@ function App() {
   // const [open, setOpen] = useState(false);
   // const handleOpen = () => setOpen(true);
   // const handleClose = () => setOpen(false);
-  const [modals,setModals] = useState([]);
+  const [modals, setModals] = useState([]);
 
   useEffect(() => {
     async function loadWeb3() {
@@ -244,17 +241,15 @@ function App() {
         var vector = [];
         var vm = [];
         //for (var i = count; i >=1; i--) {
-        for (var i = count-1; i >=0; i--) {
+        for (var i = count - 1; i >= 0; i--) {
           const post = await whistleBlower.methods.posts(i).call();
           vector.push(post);
-          vm.push({id : post.postId, value: 0});
+          vm.push({ id: post.postId, value: 0 });
         }
         setPosts(vector);
         setModals(vm);
       } else {
-        window.alert(
-          "In Metamask,Connect to Ropsten Network"
-        );
+        window.alert("In Metamask,Connect to Ropsten Network");
       }
       setLoading(false);
     }
@@ -357,44 +352,50 @@ function App() {
         //window.location.reload()
       })
       .on("error", (e) => {
-       // window.alert("Error");
+        // window.alert("Error");
         setLoading(false);
       });
   }
   /********************MODAL ONCLICK***************************************/
-function handleModalClick(id){
-
-  let updatedList = modals.map((modal)=>{
-    if(modal.id == id){
-      const gg = Number(modal.value)^1;
-      return { ...modal, value : gg }
-    }
-    return modal;
-  });
-  setModals(updatedList);
-}
+  function handleModalClick(id) {
+    let updatedList = modals.map((modal) => {
+      if (modal.id == id) {
+        const gg = Number(modal.value) ^ 1;
+        return { ...modal, value: gg };
+      }
+      return modal;
+    });
+    setModals(updatedList);
+  }
   return (
     <div className="App">
-    {/************** Navbar ************************/}
-    <Navbar
-          Hash={Hash}
-          uploadFile={uploadFile}
-          generateHash={generateHash}
-          addToChain={addToChain}
-     />
+      {/************** Navbar ************************/}
+      <Navbar
+        Hash={Hash}
+        uploadFile={uploadFile}
+        generateHash={generateHash}
+        addToChain={addToChain}
+      />
 
       <Box className={classes.hero}>
-          <div className={classes.row}>
-            <div className={classes.rowLeft}>
-              <div className={classes.leftTitle}>Welcome to<br/><strong>Whistle Blower!</strong></div>
-              <div className={classes.tagLine}>Defending facts on the web</div>
-            </div> 
-            <div className={classes.rowRight}>
-                <img src="https://media.discordapp.net/attachments/919450418499710997/921313013997400104/The_7_Elements_of_Art.png" width={'100%'} ></img>
+        <div className={classes.row}>
+          <div className={classes.rowLeft}>
+            <div className={classes.leftTitle}>
+              Welcome to
+              <br />
+              <strong>Whistle Blower!</strong>
             </div>
-          </div>  
+            <div className={classes.tagLine}>Defending facts on the web</div>
+          </div>
+          <div className={classes.rowRight}>
+            <img
+              src="https://media.discordapp.net/attachments/919450418499710997/921313013997400104/The_7_Elements_of_Art.png"
+              width={"100%"}
+            ></img>
+          </div>
+        </div>
       </Box>
-    
+
       <Container
         maxWidth="lg"
         className={classes.blogsContainer}
@@ -422,7 +423,10 @@ function handleModalClick(id){
                       className={classes.media}
                       image={`https://ipfs.infura.io/ipfs/${post.postHash}`}
                       title="Contemplative Reptile"
-                      style={{backgoundImage : 'url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png")'}}
+                      style={{
+                        backgoundImage:
+                          'url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png")',
+                      }}
                     />
                     <CardContent>
                       <Typography
@@ -431,8 +435,11 @@ function handleModalClick(id){
                         component="h2"
                         className={classes.h}
                       >
-                        <Chip label={post.postCategory} color="success" className={classes.chip}/>
-
+                        <Chip
+                          label={post.postCategory}
+                          color="success"
+                          className={classes.chip}
+                        />
                       </Typography>
                       <Typography
                         variant="body2"
@@ -444,25 +451,43 @@ function handleModalClick(id){
                       </Typography>
                     </CardContent>
                   </CardActionArea>
-                  {console.log("Modals",modals)}
+                  {console.log("Modals", modals)}
                   <Modal
-                    open = {typeof modals[key] === 'undefined'? false : modals[key].value}
+                    open={
+                      typeof modals[key] === "undefined"
+                        ? false
+                        : modals[key].value
+                    }
                     onClose={() => handleModalClick(post.postId)}
                     aria-labelledby="modal-modal-title"
                     aria-describedby="modal-modal-description"
                   >
-                  <Box sx={modal_style}>
-                      <Typography id="modal-modal-title" variant="h6" component="h2">
-                        <h3 style={{textAlign : 'center'}}>{post.postTitle}</h3>
+                    <Box sx={modal_style}>
+                      <Typography
+                        id="modal-modal-title"
+                        variant="h6"
+                        component="h2"
+                      >
+                        <h3 style={{ textAlign: "center" }}>
+                          {post.postTitle}
+                        </h3>
                       </Typography>
                       {/* <img src = {`https://ipfs.infura.io/ipfs/${post.postHash}`}  width="400px"/> */}
-                      <img src={`https://ipfs.infura.io/ipfs/${post.postHash}`} onError={(e)=>{e.target.onerror = null; e.target.src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png"}} width = "400px"/>
+                      <img
+                        src={`https://ipfs.infura.io/ipfs/${post.postHash}`}
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src =
+                            "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png";
+                        }}
+                        width="400px"
+                      />
                       <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                      {post.postDescription}
+                        {post.postDescription}
                       </Typography>
                     </Box>
                   </Modal>
-            
+
                   <CardActions className={classes.cardActions}>
                     <div className={classes.likes}>
                       <span className={classes.like}>{post.upvotes}</span>
@@ -471,7 +496,7 @@ function handleModalClick(id){
                         onClick={() => increaseUpvotes(post.postId)}
                       />
                     </div>
-                   
+
                     <div className={classes.likes}>
                       <span className={classes.like}>{post.downvotes}</span>
                       <ThumbDownIcon
@@ -481,15 +506,19 @@ function handleModalClick(id){
                     </div>
                     {/********************* Comments *************************/}
                     <div className={classes.likes}>
-                    <span className={classes.like}>{0}</span>
-                    {console.log(post)}
-                    <Link className={classes.commentTitle} to={`/whistleblowerUI/comments/1`} props={1}>
-                    <CommentIcon
-                      className={classes.clickableIcon}
-                      onClick={() => alert("comments")}
-                    />
-                    </Link>
-                  </div>
+                      <span className={classes.like}>{0}</span>
+                      {console.log(post)}
+                      <Link
+                        className={classes.commentTitle}
+                        to={`/whistleblowerUI/comments/1`}
+                        props={1}
+                      >
+                        <CommentIcon
+                          className={classes.clickableIcon}
+                          onClick={() => alert("comments")}
+                        />
+                      </Link>
+                    </div>
 
                     <Box className={classes.author}>
                       <Box ml={2}></Box>
@@ -512,37 +541,68 @@ function handleModalClick(id){
         </Box>
       </Container>
 
-       
-      <Box 
-  style={{backgroundColor: '#0072E5', 
-  color: 'white',
-  marginTop: '30px',
-  float: 'bottom',
-  positon: 'sticky'
-  }}>        
-  <Container maxWidth="lg" style={{ paddingBottom : '30px', paddingTop: '30px'}}>
-      <div className={classes.footerDiv}>
-      <div>
-        <img src="https://cdn.discordapp.com/attachments/919450418499710997/921367864852766740/NFT_team_Logo_500_x_300_px.png" width='200px'></img>
-      </div>
-      <div>Copyright © NonFungibleTeam 2021-22</div>
-      <div style={{ fontSize: '15px' ,paddingBottom: '10px', marginTop : "10px", textAlign: 'center'}}>
-      <YouTubeIcon
-        className={classes.clickableIcon}
-        style={{marginRight :'10px',marginLeft : '10px', color: 'white'}}
-        onClick={() => window.open("https://www.youtube.com/channel/UCTF80cOCjQcEDvV4QIQeEQA",'_blank')}
-      />
-      <GitHubIcon
-          className={classes.clickableIcon}
-          style={{marginRight :'10px',marginLeft : '10px', color: 'white'}}
-          onClick={() => window.open('https://github.com/darshana-v/WhistleBlower', '_blank')}
-        />
-      </div>
-      </div>
-  </Container>
-</Box>
-      
-      </div>
+      <Box
+        style={{
+          backgroundColor: "#0072E5",
+          color: "white",
+          marginTop: "30px",
+          float: "bottom",
+          positon: "sticky",
+        }}
+      >
+        <Container
+          maxWidth="lg"
+          style={{ paddingBottom: "30px", paddingTop: "30px" }}
+        >
+          <div className={classes.footerDiv}>
+            <div>
+              <img
+                src="https://cdn.discordapp.com/attachments/919450418499710997/921367864852766740/NFT_team_Logo_500_x_300_px.png"
+                width="200px"
+              ></img>
+            </div>
+            <div>Copyright © NonFungibleTeam 2021-22</div>
+            <div
+              style={{
+                fontSize: "15px",
+                paddingBottom: "10px",
+                marginTop: "10px",
+                textAlign: "center",
+              }}
+            >
+              <YouTubeIcon
+                className={classes.clickableIcon}
+                style={{
+                  marginRight: "10px",
+                  marginLeft: "10px",
+                  color: "white",
+                }}
+                onClick={() =>
+                  window.open(
+                    "https://www.youtube.com/channel/UCTF80cOCjQcEDvV4QIQeEQA",
+                    "_blank"
+                  )
+                }
+              />
+              <GitHubIcon
+                className={classes.clickableIcon}
+                style={{
+                  marginRight: "10px",
+                  marginLeft: "10px",
+                  color: "white",
+                }}
+                onClick={() =>
+                  window.open(
+                    "https://github.com/darshana-v/WhistleBlower",
+                    "_blank"
+                  )
+                }
+              />
+            </div>
+          </div>
+        </Container>
+      </Box>
+    </div>
   );
 }
 
