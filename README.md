@@ -1,8 +1,8 @@
 # WhistleBlower
 
-<p align="center"><img src="https://github.com/pjflux2001/whistleblowerUI/blob/main/WB_2.png" width = "25%" height = "25%"></p>
+<p align="center"><img src="./WB_2.png" width = "25%" height = "25%"></p>
 
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)]() [![Website](https://img.shields.io/badge/View-Website-blue)](https://wb.noormohammed.tech/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)]() [![Website](https://img.shields.io/badge/View-Website-blue)](https://noormohammedb.github.io/WhistleBlower-Dapp/)
 
 <strong>Defending facts on the web</strong>
 
@@ -21,7 +21,7 @@
 
 ## Description
 
-### Inspiration 
+### Inspiration
 
 In countries like China, North Korea, Cuba, and countless others where to and fro flow of news is highly restricted. News and media constitute the fourth pillar of any democracy. People, both inside and outside the regime, have a diluted image of the governing bodies. It is the media that is deemed responsible for exposing the true face of these bodies - be it good or bad. If the freedom of media is compromised, democracy is just another word in the dictionary. In these recent times, this freedom of speech, expression, and press have been threatened by a lot of centralized bodies ranging from terrorist groups, media agencies, departments of the government - reporters are getting attacked each and every day at some or other corner of the world, people are being fed with fake news circulating through these social media websites on a daily basis. There should be a system where anyone can report information anonymously, and no one should have control over its existence and reach while the community decides upon the validity of the same. There should be an open platform to get true and unbiased opinions from people without putting their fundamental rights at risk. This is where our application, WhistleBlower, comes into play.
 
@@ -34,16 +34,19 @@ WhistleBlower is a web application that maintains the user's anonymity while the
 We learned about development using Solidity, IPFS, Web3.js, Truffle, along with using the MERN stack to handle different functionalities on the application. We observed how big IPFS already is and how it can scale as per our requirements with the help of the Filecoin network. Also, Polygon can be used to scale and expand the scope of the application across various Ethereum-compatible blockchain networks without sacrificing the performance of our application.
 
 ### Challenges we ran into
+
 1. Moving between local and test blockchain networks
 1. Checking file formats from the IPFS file hash
 1. Connecting the tokens with post logic
 
 ### Accomplishments that we're proud of
+
 1. Integrated diverse tech stacks to work together
 1. Learned a lot about Ethereum blockchain and its technologies - FileCoin and Polygon.
 1. Joined the QuestBook community
 
 ### What's next for WhistleBlower
+
 Our app is still in the early stages of production, and there is a lot yet to come. We are planning to add the following features :
 
 1. Minting / Issuing a whistleblower native token to the user based on their activity on the site, just like basic attention token(BAT) in Brave browser.
@@ -63,7 +66,7 @@ You can find the demo video at [Video](https://www.youtube.com/watch?v=Mst8ILBnN
 
 ## Live demo
 
-You can find a running system to test at [wb.noormohammed.tech](https://wb.noormohammed.tech/)
+You can find a running system to test at [noormohammedb.github.io/WhistleBlower-Dapp](https://noormohammedb.github.io/WhistleBlower-Dapp/)
 
 ## Built with
 
@@ -83,12 +86,12 @@ We use [github](https://github.com/) for versioning. Versions will be made avail
 
 ## Authors
 
-* **Bhanu** - [bhanu1037](https://github.com/bhanu1037)
-* **Prashant** - [pjflux2001](https://github.com/pjflux2001)
-* **Satyam** - [itzsatya](https://github.com/itzsatya)
-* **Noor** - [noormohammedb](https://github.com/noormohammedb)
-* **Vishmay** - [Vishmay919](https://github.com/Vishmay919)
-* **Darshana** - [darshana-v](https://github.com/darshana-v)
+- **Bhanu** - [bhanu1037](https://github.com/bhanu1037)
+- **Prashant** - [pjflux2001](https://github.com/pjflux2001)
+- **Satyam** - [itzsatya](https://github.com/itzsatya)
+- **Noor** - [noormohammedb](https://github.com/noormohammedb)
+- **Vishmay** - [Vishmay919](https://github.com/Vishmay919)
+- **Darshana** - [darshana-v](https://github.com/darshana-v)
 
 ## License
 
@@ -96,4 +99,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-* Based on [Billie Thompson's README template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2).
+- Based on [Billie Thompson's README template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2).
